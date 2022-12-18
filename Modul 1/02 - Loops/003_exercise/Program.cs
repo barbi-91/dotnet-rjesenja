@@ -11,8 +11,9 @@
  */
 
 #region Test data for the exercise
+int fruitIndexer = 0, inputFruitIndexer = 0;
 
-int selected_number;
+
 string[] fruits = new string[13]
 {
     "Apple",
@@ -34,8 +35,41 @@ string[] fruits = new string[13]
 
 // Insert your code logic below using while loop
 // ==================================================================
+foreach (var fruit in fruits)
+{
+    Console.WriteLine(fruit);
+}
 
-
+while (true)
+{
+    Console.WriteLine("Select the numbers 1 through 13");
+    bool validate_input = int.TryParse(Console.ReadLine(), out int result);
+    if (validate_input == false)
+    {
+        Console.WriteLine("Number validation failed, loop is restarting...");
+        break;
+    }
+    else
+    {
+        inputFruitIndexer = result;
+        if (inputFruitIndexer >= 1 && inputFruitIndexer <= 13)
+        {
+            while (fruitIndexer < fruits.Length)
+            {
+                if (inputFruitIndexer - 1 == fruitIndexer)
+                {
+                    Console.WriteLine($"{fruits[fruitIndexer]}");
+                }
+                fruitIndexer++;
+            }
+            break;
+        }
+        else
+        {
+            Console.WriteLine("Numbers are not between 1 and 13, Try again!");
+        }
+    }
+}
 
 // This is only here to stop the program before exiting
 Console.ReadKey();
