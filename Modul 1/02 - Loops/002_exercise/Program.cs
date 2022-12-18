@@ -4,7 +4,7 @@
  */
 
 #region Test data for the exercise
-
+int fruitIndexer = 0;
 string[] fruits = new string[13]
 {
     "Apple",
@@ -27,6 +27,12 @@ string[] fruits = new string[13]
 // Insert your code logic below using while loop
 // ==================================================================
 
+while (fruitIndexer < fruits.Length)
+{
+    Console.WriteLine($"{fruits[fruitIndexer]}");
+    fruitIndexer++;
+
+}
 
 
 // This is only here to stop the program before exiting
