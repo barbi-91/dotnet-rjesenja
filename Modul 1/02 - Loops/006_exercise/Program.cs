@@ -21,6 +21,11 @@ Console.WriteLine();
 Console.WriteLine("Print array in reverse order:");
 // Insert your code logic below using foreach loop
 // ==================================================================
+Array.Reverse(animals);
+foreach (string animal in animals)
+{
+    Console.WriteLine(animal);
+}
 
 
 
