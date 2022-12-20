@@ -5,7 +5,7 @@
 
 namespace _001_exercise;
 
-public class Program
+internal class Program
 {
     static void Main(string[] args)
     {
@@ -24,20 +24,10 @@ public class Program
          * 
          */
 
+
         // Insert your code logic below
         // ==================================================================
-        CountSpaces(sentence);
 
-        static void CountSpaces( string sentence)
-        {
-            int counter = 0;
-            foreach (char letter in sentence)
-            {
-                if (letter == ' ')
-                    counter++;
-            }
-            Console.WriteLine("Number of white spaces in sentence is: " + counter);
-        }
 
         // This is only here to stop the program before exiting
         Console.ReadKey();
