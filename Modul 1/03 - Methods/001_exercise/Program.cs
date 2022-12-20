@@ -28,12 +28,21 @@ internal class Program
         // Insert your code logic below
         // ==================================================================
 
+        CountSpaces(sentence);
 
         // This is only here to stop the program before exiting
         Console.ReadKey();
     }
-
     // Insert your methods inside class Program
     // ==================================================================
-
+    public static void CountSpaces(string sentence)
+    {
+        int counter = 0;
+        foreach (char letter in sentence)
+        {
+            if (letter == ' ')
+                counter++;
+        }
+        Console.WriteLine("Number of white spaces in sentence is: " + counter);
+    }
 }
