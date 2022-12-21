@@ -14,6 +14,12 @@ internal class Program
         Console.Write("Enter a number: ");
         string validate_number = Console.ReadLine();
 
+        bool validacion = int.TryParse(validate_number, out int parsedNumber);
+        if (validacion == true)
+        {
+            number = parsedNumber;
+            Console.WriteLine($" Sum of the individual digits of a number is: {CountDigit(number)}");
+        }
         /*
          * Help:
          * Step 1: validate input
@@ -30,4 +36,14 @@ internal class Program
 
     // Insert your methods inside class Program
     // ==================================================================
+    static int CountDigit(int n)
+    {
+        int sum = 0;
+        while (n != 0)
+        {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
 }
