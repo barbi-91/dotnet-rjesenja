@@ -24,13 +24,60 @@ internal class Program
 
         // Insert your code logic below
         // ==================================================================
+        int i = 0;
+        for (i = 0; i < 10; i++)
+        {
+            numbers[i] = EnterNumbers(i);
+        }
+        Console.WriteLine("Array before sorting: ");
+        PrintArray(numbers);
+        Console.WriteLine("===================");
+        SortNumbers(numbers);
+        Console.WriteLine("Sorted array: ");
+        PrintArray(numbers);
+        Console.WriteLine("===================");
+        Console.WriteLine($"Smallest number of the array: {numbers[0]}");
+        Console.WriteLine($"Largest number of the array: {numbers[numbers.Length -1]}");
 
         // This is only here to stop the program before exiting
         Console.ReadKey();
     }
-
     // Insert your methods inside class Program
     // ==================================================================
+    public static int EnterNumbers(int i)
+    {
+        int num = 0;
+        int parsedInteger = 0;
+        string number = String.Empty;
+        while (int.TryParse(number, out parsedInteger) == false)
+        {
+            Console.WriteLine($"Please enter {i + 1} number");
+            number = Console.ReadLine();
+        }
+        return parsedInteger;
+    }
 
+    public static void PrintArray(int[] numberArray)
+    {
+        foreach (int number in numberArray)
+        {
+            Console.Write(number + " ");
+        }
+    }
 
+    public static void SortNumbers(int[] numbers)
+    {
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            for (int j = i; j < numbers.Length; j++)
+            {
+                if (numbers[i] > numbers[j])
+                {
+                    int temp = numbers[i];
+                    numbers[i] = numbers[j];
+                    numbers[j] = temp;
+                }
+            }
+        }
+    }
 }
