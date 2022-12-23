@@ -108,12 +108,136 @@ internal class Program
          * Type comparison documentation: https://learn.microsoft.com/en-us/dotnet/api/system.object.gettype?view=net-6.0
          * Type conversion documentation: https://learn.microsoft.com/en-us/dotnet/api/system.convert?view=net-6.0
          */
+        OrganizeList(first_unorganized_list, list_of_strings, list_of_integers, list_of_booleans, list_of_character, list_of_decimal_numbers);
+        OrganizeList(second_unorganized_list, list_of_strings, list_of_integers, list_of_booleans, list_of_character, list_of_decimal_numbers);
 
+        int operation = 0;
+        Console.WriteLine("Do you want to print the list ? (yes/no)");
+        string? print = Console.ReadLine()?.ToLower();
 
-        // This is only here to stop the program before exiting
-        Console.ReadKey();
+        if (print == "yes")
+        {
+            while (true)
+            {
+                Console.WriteLine("Available options for choosing to print the list (type 'no' to exit): ");
+                Console.WriteLine();
+                Console.WriteLine(" * 1 - print everything from the list of integers \n * 2 - print everything from the list of decimal numbers \n * 3 - print everything from the list of string  \n * 4 - print everything from the list of characters  \n * 5 - print everything from the list of booleans");
+                Console.WriteLine();
+                Console.WriteLine("Enter your choice: ");
+
+                string? chosenOperation = Console.ReadLine()?.ToLower();
+                if (chosenOperation == "no")
+                {
+                    Console.WriteLine("You chose to exit program, goodbye!");
+                    return;
+                }
+
+                bool valid = int.TryParse(chosenOperation, out operation);
+                if (valid == false || operation < 1 || operation > 5)
+                {
+                    Console.WriteLine("Wrong input value! Program will exit! ");
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("Values of list are:");
+                    PrintList(operation, list_of_strings, list_of_integers, list_of_booleans, list_of_character, list_of_decimal_numbers);
+                    Console.WriteLine("===============================");
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("Program has ended!");
+            return;
+        }
     }
 
     // Insert your methods inside class Program
     // ==================================================================
+    public static void OrganizeList(ArrayList listOfValues, List<string> stringList, List<int> intList, List<bool> boolList, List<char> charList, List<decimal> decimalList)
+    {
+        foreach (var value in listOfValues)
+        {
+            if (value == null)
+            {
+                continue;
+            }
+            else
+            {
+                Type t = value.GetType();
+                if (t.Equals(typeof(string)))
+                {
+                    stringList.Add((string)value);
+                }
+                else if (t.Equals(typeof(char)))
+                {
+                    charList.Add((char)value);
+                }
+                else if (t.Equals(typeof(int)))
+                {
+                    intList.Add((int)value);
+                }
+                else if (t.Equals(typeof(bool)))
+                {
+                    boolList.Add((bool)value);
+                }
+                else if (t.Equals(typeof(decimal)))
+                {
+                    decimalList.Add((decimal)value);
+                }
+                else
+                    Console.WriteLine("'{0}' is another data type: {1}.", value, t);
+            }
+        }
+    }
+
+    public static void PrintList(int operationNum, List<string> stringList, List<int> intList, List<bool> boolList, List<char> charList, List<decimal> decimalList)
+    {
+        int count = 0;
+        switch (operationNum)
+        {
+            case 1:
+                count = intList.Count();
+                foreach (var item in intList)
+                {
+                    Console.WriteLine(item);
+                }
+                break;
+            case 2:
+                count = decimalList.Count();
+                foreach (var item in decimalList)
+                {
+                    Console.WriteLine(item);
+                }
+                break;
+            case 3:
+                count = stringList.Count();
+                foreach (var item in stringList)
+                {
+                    Console.WriteLine(item);
+                }
+                break;
+            case 4:
+                count = charList.Count();
+                foreach (var item in charList)
+                {
+                    Console.WriteLine(item);
+                }
+                break;
+            case 5:
+                count = boolList.Count();
+                foreach (var item in boolList)
+                {
+                    Console.WriteLine(item);
+                }
+                break;
+
+            default:
+                Console.WriteLine("Invalid operation code!");
+                return;
+        }
+        Console.WriteLine("***************************************");
+        Console.WriteLine($"Count of elements in a list: {count}");
+    }
 }
