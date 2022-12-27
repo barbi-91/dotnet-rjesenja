@@ -12,10 +12,14 @@ internal class Program
 
 
         // Create two objects of the Car class
+        Car audi = new Car();
+        Car bmw = new Car();
         // Set an arbitrary value to your object property "MaxSpeed"
         // The value of the "MaxSpeed" property must not be greater than 120 or less than 0
-        // Use "set" method inside "MaxSpeed" property to add conditions
+        bmw.MaxSpeed = 90;
+        audi.MaxSpeed = 130;
 
+        // Use "set" method inside "MaxSpeed" property to add conditions
 
         // This is only here to stop the program before exiting
         Console.ReadKey();
