@@ -1,0 +1,38 @@
+﻿@model IEnumerable<IGrouping<string, Beer>>;
+
+@{
+    ViewData["Title"] = "GroupByType";
+}
+
+<h1>GroupByType</h1>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Type
+        </th>
+        <th>
+            Beer
+        </th>
+    </tr>
+    @foreach (var beerGrouping in Model)
+    {
+        <tr>
+            <td>
+                @beerGrouping.Key
+            </td>
+            <td>
+                <table>
+                    @foreach (var beer in beerGrouping)
+                    {
+                        <tr>
+                            <td>@beer.Name</td>
+                        </tr>
+                    }
+                </table>
+            </td>
+        </tr>
+    }
+
+</table>

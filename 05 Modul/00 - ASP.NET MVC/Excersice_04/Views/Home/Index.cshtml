@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<a asp-controller="Beer" asp-action="Index"> Beers List</a>
+<br />
+<a asp-controller="Beer" asp-action="FilterByPercentage"> Beers List Filter By Percentage Alcohol > 5%</a>
+<br />
+<a asp-controller="Beer" asp-action="GroupByCountry"> Beers List Group By Country</a>
+<br />
+<a asp-controller="Beer" asp-action="FilterByName"> Beers List Filtered By Letter 'S'</a>
+<br />
+<a asp-controller="Beer" asp-action="GroupByType"> Beers List Group By Type</a>

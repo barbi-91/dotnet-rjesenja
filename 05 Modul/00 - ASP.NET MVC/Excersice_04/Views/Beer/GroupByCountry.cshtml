@@ -1,0 +1,52 @@
+﻿@model IEnumerable<IGrouping<string, Beer>>;
+
+@{
+    ViewData["Title"] = "GroupByCountry";
+}
+
+<h1>GroupByCountry</h1>
+
+
+
+@if (!Model.Any())
+{
+    @Html.LabelForModel("Not data uploaded yet")
+}
+else
+{
+    <table class="table">
+
+        <tr>
+            <th>
+                Country
+            </th>
+            <th>
+                Beer
+            </th>
+        </tr>
+
+        @foreach (var beerGrouping in Model)
+        {
+            <tr>
+                <td>
+                    @beerGrouping.Key
+                </td>
+                <td>
+                    <table>
+                        @foreach (var beer in beerGrouping)
+                        {
+                            <tr style="color:deeppink">
+                                <td>@beer.Name</td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+            </tr>
+
+        }
+
+    </table>
+}
+
+
+
