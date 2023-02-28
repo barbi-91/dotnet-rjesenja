@@ -56,6 +56,12 @@ internal class DataClass
                 "Five",
                 "Six"
             };
+
+
+    public List<Participant> GetList()
+    {
+        return participantDemoList;
+    }
 }
 
 
@@ -86,3 +92,7 @@ internal class Course
     public int Id { get; set; }
     public string Title { get; set; }
 }
+
+
+
+//metode za dohvacanje liste

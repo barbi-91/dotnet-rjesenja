@@ -5,9 +5,22 @@ public class AssignmentClass
 
     // 00 - Create an appropriate method for each task
 
-
-
     // 1. Get the first element from the participantDemoList collection that starts with the letter "t", if the element does not exist, print that it does not exist.
+    
+    public static void GetFirstParticipant(List<Participant> listParticipant)
+    {
+        var firstParticipant = listParticipant .FirstOrDefault(e => e.FullName.StartsWith("T"));
+
+        if (firstParticipant != null)
+        {
+            Console.WriteLine("Partisipant/s exists!");
+        }  
+        else
+        {
+            Console.WriteLine("Does not exist participant that starts with the letter 'T' ");
+        }
+    }
+
 
     // 2. Get the last element from the participantDemoList collection that starts with the letter "m", if the element does not exist, print that it does not exist.
 
