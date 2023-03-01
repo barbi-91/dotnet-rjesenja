@@ -1,0 +1,25 @@
+﻿@model Exercise_3.Models.Football;
+
+<table>
+    <tr>
+        <th>Details</th>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(model => model.Id)</td>
+        <td>@Html.DisplayFor(model => model.Id)</td>
+    </tr>
+        <td>@Html.DisplayNameFor(model => model.TeamName)</td>
+        <td>@Html.DisplayFor(model => model.TeamName)</td>
+    </tr>
+        <td>@Html.DisplayNameFor(model => model.Stadium)</td>
+        <td>@Html.DisplayFor(model => model.Stadium)</td>
+    </tr>
+        <td>@Html.DisplayNameFor(model => model.Founded)</td>
+        <td>@Html.DisplayFor(model => model.Founded)</td>
+    </tr>
+        <td>@Html.DisplayNameFor(model => model.Founded)</td>
+        <td>@Html.DisplayFor(model => model.Country)</td>
+    </tr>
+
+</table>
+<a asp-action="Index">Back to List</a>

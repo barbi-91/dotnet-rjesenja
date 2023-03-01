@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Exercise_3.Models.Football>;
+
+<table>
+    <thead>
+        <tr>
+            <th>TeamName</th>
+            <th>Country</th>
+            <th>Stadium</th>
+            <th>Founded</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TeamName</td>
+                <td>@item.Country</td>
+                <td>@item.Stadium</td>
+                <td>@item.Founded</td>
+                <td>@Html.ActionLink("Details", "Details", new { id=item.Id }) </td>
+            </tr>
+        }
+    </tbody>
+    <a asp-action="Index">Back to List</a>
+</table>
