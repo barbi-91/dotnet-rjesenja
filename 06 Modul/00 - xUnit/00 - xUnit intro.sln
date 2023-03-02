@@ -8,7 +8,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise_1", "Exercise_1\Exercise_1.csproj", "{EE32F962-D3EB-483B-B373-D76F8F83FB79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excersice_1.Tests", "Excersice_1.Tests\Excersice_1.Tests.csproj", "{7EF0CBB3-D026-47B7-B805-063F25A85F00}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE32F962-D3EB-483B-B373-D76F8F83FB79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE32F962-D3EB-483B-B373-D76F8F83FB79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE32F962-D3EB-483B-B373-D76F8F83FB79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE32F962-D3EB-483B-B373-D76F8F83FB79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF0CBB3-D026-47B7-B805-063F25A85F00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF0CBB3-D026-47B7-B805-063F25A85F00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF0CBB3-D026-47B7-B805-063F25A85F00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF0CBB3-D026-47B7-B805-063F25A85F00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

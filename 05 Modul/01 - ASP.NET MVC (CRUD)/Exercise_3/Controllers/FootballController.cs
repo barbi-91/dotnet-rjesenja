@@ -20,7 +20,7 @@ namespace Exercise_3.Controllers
             listFootball.Add(new Football { Id = 4, Country = "UK", Founded = 1892, Stadium = " Anfield", TeamName = "Liverpool F.C." });
             listFootball.Add(new Football { Id = 5, Country = "France", Founded = 1970, Stadium = "Parc des Princesd", TeamName = "Paris Saint-Germain FC." });
 
-            return listFootball; 
+            return listFootball;
         }
 
         // GET: FootballController
@@ -37,69 +37,5 @@ namespace Exercise_3.Controllers
             return View(objectFooball);
         }
 
-       
-
-        // GET: FootballController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: FootballController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: FootballController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: FootballController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: FootballController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: FootballController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
